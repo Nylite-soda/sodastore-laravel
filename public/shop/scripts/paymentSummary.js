@@ -50,7 +50,7 @@ export function renderPaymentSummary(){
           </div>
         </div>
 
-          <button class="place-order-button button-primary" onclick="window.location.href = 'payments.html';">
+          <button class="place-order-button button-primary" onclick="window.location.href = '/payment';">
             Place your order
           </button>
     `;

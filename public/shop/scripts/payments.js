@@ -1,6 +1,9 @@
+import { cart } from "../../data/cart.js";
+import { getOrdersFromCart, orders } from "../../data/orders.js";
 import { renderPaymentSummary } from "./paymentSummary.js";
 import { formatCurrency } from "./utils/moneyUtil.js";
 import { renderNavBarandFooter } from "./utils/rendering.js";
+import { getFromStorage, saveToStorage } from "./utils/storage.js";
 
 
 renderNavBarandFooter();
@@ -9,6 +12,8 @@ renderPaymentSummary();
 const amount = JSON.parse(localStorage.getItem('total'));
 
 document.querySelector(".total-amount").innerHTML = `₦ ${formatCurrency(amount)}`;
+
+export let ref;
 
 export function payWithPaystack() {
     const email = document.getElementById('email').value;
@@ -25,10 +30,22 @@ export function payWithPaystack() {
         amount: amount,
         currency: 'NGN', 
         callback: function (response) {
-            alert('Payment complete! Reference: ' + response.reference);
+            const promise = new Promise((resolve) => {
+                const ref = response.reference;
+                saveToStorage("ref", ref);
+                resolve("/orders")
+            });
+    
+            promise.then((url) => {
+                window.location.href = url;
+                orders = cart;
+                cart = [];
+                saveToStorage("orders", orders)
+                saveToStorage("cart", cart)
+            });
         },
         onClose: function () {
-            alert('Payment window closed.');
+            alert('Payment window closed. You will be redirected soon!');
         },
     });
 

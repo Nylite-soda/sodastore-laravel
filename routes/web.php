@@ -3,6 +3,8 @@
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
 
 
 Auth::routes();
@@ -29,14 +31,19 @@ Route::get('/payment',function()
     return view(('payments'));
 }) -> name('payment');
 
+Route::get('/orders',function()
+{
+    return view(('orders'));
+}) -> name('orders');
+
 Route::get('/product',function()
 {
     return view(('product-view'));
 }) -> name('productview');
 
-Route::get('/shopreview',[HomeController::class,'shop']) -> name('shophome');
+Route::get('/shopreview',[HomeController::class,'shopHome']) -> name('shophome');
 
-Route::get('/shop',function(){
+Route::get('/market',function(){
     return view('shop');
 }) -> name('shop');
 

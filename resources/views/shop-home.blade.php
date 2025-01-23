@@ -15,10 +15,24 @@
     <div class="shop-header js-shop-header flex"></div>
 
     <main>
+        <section class="banner">
+            <div class="carousel">
+                <img class="banner-img" src="images/Drag-washing products.png" alt="">
+                <img class="banner-img" src="images/Drag-Girls products.png" alt="">
+                <img class="banner-img" src="images/Drag-Girls products.png" alt="">
+            </div>
+            <button class="prev-btn">&lt;</button>
+            <button class="next-btn">&gt;</button>
+            <div class="indicators">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+            </div>
+        </section>
         <section class="today-deals">
             <div class="header-strip">
                 <h2 class="header-text">Today's Deals</h2>
-                <a class="see-all-link" href="shop.html">See All</a>
+                <a class="see-all-link" href="{{ route('shop') }}">See All</a>
             </div>
             <div class="today-deals-products flex">
                 <div class="today-deals-products-grid js-today-deals-products-grid"></div>
@@ -28,7 +42,7 @@
         <section class="top-picks">
           <div class="header-strip">
             <h2 class="header-text">Top Picks for You</h2>
-            <a class="see-all-link" href="shop.html">See All</a>
+            <a class="see-all-link" href="{{ route('shop') }}">See All</a>
           </div>
           <div class="top-picks-products flex">
               <div class="top-picks-products-grid js-top-picks-products-grid"></div>
