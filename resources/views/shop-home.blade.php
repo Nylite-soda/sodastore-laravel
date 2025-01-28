@@ -17,8 +17,8 @@
     <main>
         <section class="banner">
             <div class="carousel">
+                <img class="banner-img" src="images/Drag-kitchen products.png" alt="">
                 <img class="banner-img" src="images/Drag-washing products.png" alt="">
-                <img class="banner-img" src="images/Drag-Girls products.png" alt="">
                 <img class="banner-img" src="images/Drag-Girls products.png" alt="">
             </div>
             <button class="prev-btn">&lt;</button>

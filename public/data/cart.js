@@ -5,6 +5,14 @@ let matchingProduct;
 let qtyContainer;
 export let cartQuantity;
 
+export let cart  = getFromStorage("cart") || [];
+
+export function emptyCart(){
+    cart = [];
+    saveToStorage("cart", cart);
+    updateCartQuantity();
+}
+
 export function updateQtyHTML() {
     cartQuantity = getFromStorage("cartQty") || 0;
     qtyContainer = document.querySelectorAll(".js-cart-quantity");
@@ -13,7 +21,6 @@ export function updateQtyHTML() {
     });
 }
 
-export let cart  = getFromStorage("cart") || [];
 
 export function findProduct(id) {
     for (let product of products) {

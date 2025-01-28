@@ -119,7 +119,7 @@ export function renderStoreHeader(){
         </div>
   
         <div class="shop-header-right-section flex">
-          <a class="orders-link header-link" href="/checkout">
+          <a class="orders-link header-link" href="/orders">
             <div class="orders-and-returns flex">
               <span class="returns-text">Returns</span>
               <span class="orders-text">& Orders</span>

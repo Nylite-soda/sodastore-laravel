@@ -1,4 +1,4 @@
-import { cart } from "../../data/cart.js";
+import { cart, emptyCart, updateQtyHTML } from "../../data/cart.js";
 import { getOrdersFromCart, orders } from "../../data/orders.js";
 import { renderPaymentSummary } from "./paymentSummary.js";
 import { formatCurrency } from "./utils/moneyUtil.js";
@@ -22,7 +22,6 @@ export function payWithPaystack() {
         alert("Kindly enter Payer's email");
         return;
     }
-    console.log('got here')
 
     const handler = PaystackPop.setup({
         key: 'pk_test_8bbbaf3344e247196567482948a2d26f6b1d9464', 
@@ -37,11 +36,9 @@ export function payWithPaystack() {
             });
     
             promise.then((url) => {
+                getOrdersFromCart(cart);
+                emptyCart();
                 window.location.href = url;
-                orders = cart;
-                cart = [];
-                saveToStorage("orders", orders)
-                saveToStorage("cart", cart)
             });
         },
         onClose: function () {
