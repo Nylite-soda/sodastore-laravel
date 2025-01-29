@@ -5,11 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
     <link rel="icon" type="image" href="images/soda_logo.png">
-    <link rel="icon" href="{{ secure_asset('images/soda_logo.png') }}">
     <link rel="stylesheet" href="./styles/styles.css">
-    <link rel="stylesheet" href="{{ secure_asset('styles/styles.css') }}">
     <link rel="stylesheet" href="./shop/styles/shop.css">
-    <link rel="stylesheet" href="{{ secure_asset('./shop/styles/shop.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/checkout.css">
 </head>
@@ -29,8 +26,6 @@
 
     <footer class="flex js-footer"></footer>
     
-    <!-- <script src=""></script> -->
-    <!-- <script type="module" src="./scripts/checkout.js"></script> -->
-    <script src="{{ secure_asset('scripts/checkout.js') }}"></script>
+    <script type="module" src="./scripts/checkout.js"></script>
 </body>
 </html>
