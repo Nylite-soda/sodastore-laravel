@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
 
+
 Route::get('/', function () {
     return view('index');
 }) -> name('index');
@@ -47,7 +48,7 @@ Route::get('/market',function(){
     return view('shop');
 }) -> name('shop');
 
-Route::post('/register', [RegisterController::class, 'register'])->name('register');
+// Route::post('/register', [RegisterController::class, 'register'])->name('register');
 // Route::get('/shop',[HomeController::class,'shop']) -> name('shop');
 
 // Route::get('/contact',function()
