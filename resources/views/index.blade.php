@@ -4,25 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soda</title>
-    <link rel="icon" type="image" href="{{ asset('images/soda_logo.png') }}">
-    <link rel="stylesheet" href="{{ asset('styles/styles.css') }}" type="text/css"/>
+    <link rel="icon" type="image" href="images/soda_logo.png">
+    <link rel="stylesheet" href="styles/styles.css" type="text/css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <nav class="navbar flex js-navbar">
-        <ul>
-            <li><a href="{{ route('home') }}">Home</a></li>
-            <li><a href="{{ route('shop') }}">Shop</a></li>
-            <li><a href="{{ route('checkout') }}">Checkout</a></li>
-            <li><a href="{{ route('productview') }}">Product View</a></li>
-            <li><a href="{{ route('shophome') }}">Shop Review</a></li>
-            <li><a href="{{ route('payment') }}">Payment</a></li>
-            <li><a href="{{ route('contact') }}">Contact</a></li>
-        </ul>
-    </nav>
+    <nav class="navbar flex js-navbar"></nav>
 
     <main class="content-container">
         <section class="flex section one-container container">
@@ -74,6 +64,6 @@
         <!-- Footer content -->
     </footer>
 
-    <script type="module" src="{{ asset('scripts/home.js') }}"></script>
+    <script type="module" src="scripts/home.js"></script>
 </body>
 </html>
