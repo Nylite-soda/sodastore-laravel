@@ -56,3 +56,6 @@ Route::get('/market',function(){
 //     return view(('contact'));
 // }) -> name('contact');
 
+Route::get('/thank-you', function () {
+    return view('thank-you');
+}) -> name('thank-you');

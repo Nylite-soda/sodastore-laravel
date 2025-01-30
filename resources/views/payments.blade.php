@@ -6,6 +6,7 @@
     <title>Payment</title>
     <link rel="icon" type="image" href="images/soda_logo.png">
     <link rel="stylesheet" href="styles/styles.css" type="text/css"/>
+    <link rel="stylesheet" href="styles/all-shared.css" type="text/css"/>
     <link rel="stylesheet" href="styles/payments.css" type="text/css"/>
     <link rel="stylesheet" href="styles/checkout.css" type="text/css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">

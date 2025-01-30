@@ -6,6 +6,7 @@
     <title>Product View</title>
     <link rel="icon" type="image" href="images/soda_logo.png">
     <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="styles/all-shared.css" type="text/css"/>
     <link rel="stylesheet" href="./shop/styles/shop.css">
     <link rel="stylesheet" href="./shop/styles/product-view.css">
 </head>
