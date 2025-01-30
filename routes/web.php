@@ -11,15 +11,15 @@ use App\Http\Middleware\AdminMiddleware;
 
 Auth::routes();
 
-Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+// Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
-Route::middleware([AdminMiddleware::class])->group(function () {
-    Route::get('/admin/contacts', [ContactController::class, 'index'])->name('admin.contacts');
-});
+// Route::middleware([AdminMiddleware::class])->group(function () {
+//     Route::get('/admin/contacts', [ContactController::class, 'index'])->name('admin.contacts');
+// });
 
-Route::middleware(['auth', 'role:admin'])->group(function () {
-    Route::get('/admin/contacts', [AdminController::class, 'showContacts'])->name('admin.contacts');
-});
+// Route::middleware(['auth', 'role:admin'])->group(function () {
+//     Route::get('/admin/contacts', [AdminController::class, 'showContacts'])->name('admin.contacts');
+// });
 
 // // Admin-only route
 // Route::middleware(['auth', 'admin'])->group(function () {
@@ -35,10 +35,17 @@ Route::get('/home',function(){
     return view('home');
 }) -> name('home');
 
-Route::get('/contact',function()
-{
-    return view(('contact'));
-}) -> name('contact');
+Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.form');
+Route::post('/contact', [ContactController::class, 'submitForm'])->name('contact.submit');
+
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/admin/contacts', [AdminController::class, 'showContacts'])->name('admin.contacts');
+});
+
+// Route::get('/contact',function()
+// {
+//     return view(('contact'));
+// }) -> name('contact');
 
 
 Route::get('/checkout',[HomeController::class,'checkout']) -> name('checkout');
@@ -77,6 +84,6 @@ Route::get('/thank-you', function () {
     return view('thank-you');
 }) -> name('thank-you');
 
-Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+// Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
-Route::get('/admin/contacts', [ContactController::class, 'index'])->name('admin.contacts');
+// Route::get('/admin/contacts', [ContactController::class, 'index'])->name('admin.contacts');
