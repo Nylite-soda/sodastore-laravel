@@ -1,13 +1,25 @@
 <?php
 
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-
+use App\Http\Middleware\AdminMiddleware;
 
 
 Auth::routes();
+
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
+Route::middleware([AdminMiddleware::class])->group(function () {
+    Route::get('/admin/contacts', [ContactController::class, 'index'])->name('admin.contacts');
+});
+
+// // Admin-only route
+// Route::middleware(['auth', 'admin'])->group(function () {
+//     Route::get('/admin/contacts', [ContactController::class, 'index'])->name('admin.contacts');
+// });
 
 
 Route::get('/', function () {
@@ -59,3 +71,7 @@ Route::get('/market',function(){
 Route::get('/thank-you', function () {
     return view('thank-you');
 }) -> name('thank-you');
+
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
+Route::get('/admin/contacts', [ContactController::class, 'index'])->name('admin.contacts');

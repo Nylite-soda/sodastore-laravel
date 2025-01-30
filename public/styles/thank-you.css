@@ -1,0 +1,30 @@
+.content-container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.thank-you-header {
+    background-color: #45322C;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+.thank-you-content {
+    padding: 20px;
+}
+.button {
+    background-color: #F1D3B3;
+    color: #45322C;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: #e6c9b5; /* darker shade of #F1D3B3 */
+}

@@ -33,7 +33,7 @@
                     </div>
                     <div class="leaveAmessage">
                         <header class="lam flex">LEAVE A MESSAGE</header>
-                        <form class="contact-form flex" action="contact-form-result.html" method="post">
+                        <form class="contact-form flex" action="contact.store" method="post">
                             <fieldset class="flex gap">
                                 <span class="row flex">
                                     <span class="col flex"><img src="images/person.svg" alt=""><input id="firstName" name="firstName" class="form-data" type="text" placeholder="First Name" required /></span>
